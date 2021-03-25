@@ -10,7 +10,6 @@ contract Storage {
     string country;
     string language;
 
-    event Check(string, string userID, string, string videoID, string, string modality, string, string dateRequest, string, string country, string, string language);
     
     
     // Overwrite stored values in all variables in the memory on the BlockChain
@@ -22,7 +21,6 @@ contract Storage {
         country = coun;
         language = lang;
         
-        emit Check("User: ", userID, "Video to play: ", videoID, "Modality: ", modality,  "Date of the request: ", dateRequest, "Country: ", country, "Video Language: ", language);
     }
 
     //Getter that does not consume GAS as it is a view function
