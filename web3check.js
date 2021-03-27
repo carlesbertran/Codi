@@ -7,13 +7,22 @@ const readInterface = readline.createInterface({
     console: false
 });
 
+function deleteFile (){
+    fs.writeFile('./test/report.txt','', (err) => {
+        console.log("file deleted");
+    });
+
+}
+
 var arguments = []
 
 readInterface.on('line', (line) => {
-    //console.log(line);
     arguments.push(line);
 }).on('close', () => {
-    console.log(arguments);
-    console.log(arguments.length);
-    process.exit(0);
+    deleteFile();
+    return arguments;
 });
+
+console.log(arguments);
+
+

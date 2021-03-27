@@ -1,9 +1,36 @@
 const Web3 = require('web3');
-const Storage = require('./build/contracts/Storage.json')
+const Storage = require('./build/contracts/Storage.json');
+const readline = require('readline');
+const fs = require('fs');
 
 
 const init = async () => {
     try {
+        //read and clear txt file section
+        const readInterface = readline.createInterface({
+            input: fs.createReadStream('./test/report.txt'),
+            output: process.stdout,
+            console: false
+        });
+
+        function deleteFile (){
+            fs.writeFile('./test/report.txt','', (err) => {
+                console.log("file deleted");
+            });
+        
+        }
+            
+        var arguments = []
+            
+        readInterface.on('line', (line) => {
+            arguments.push(line);
+        }).on('close', () => {
+            deleteFile();
+            return arguments;
+        });
+
+
+        //Web3 send function section
         const web3 = new Web3('http://localhost:7545');
 
         const id = await web3.eth.net.getId();
@@ -12,9 +39,10 @@ const init = async () => {
             Storage.abi,
             deployedNetwork.address
             );
-
-            const result = await contract.methods.storeData("tv3","video1","Linear","22-03","ES","cat").send({from: '0xB825B32b3aA8F1aA0AAeC1B8692172EC51a17fb6', gas:3000000});
-            console.log(result);
+     
+        console.log(arguments);
+        const result = await contract.methods.storeData(arguments[0],arguments[1],arguments[2],arguments[3],arguments[4],arguments[5]).send({from: '0xB825B32b3aA8F1aA0AAeC1B8692172EC51a17fb6', gas:3000000});
+        console.log(result);
     } catch (e) {
         console.log(e.message)
     }
