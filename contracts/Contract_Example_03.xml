@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding="UTF-8" standalone="yes"?>
+<cel-core:Contract 
+    xmlns:cel-core= "urn:mpeg:mpeg21:cel:core:2015" 
+    xmlns:cel-ipre= "urn:mpeg:mpeg21:cel:ipre:2015" 
+    xmlns:dc= "http: purl.org dc elements 1.1"
+    xmlns:xsi= "http: www.w3.org 2001 XMLSchema-instance" 
+    xmlns:dii= "urn:mpeg:mpeg21:2002:01-DII-NS"
+    xsi:schemaLocation= "urn:mpeg:mpeg21:cel:core:2015 cel-core.xsd urn:mpeg:mpeg21:cel:ipre:2015 cel-ipre.xsd" 
+    contractId= "Contract Example 3 with 3 Permissions">
+    <cel-core:TextVersion>
+        <!-- TEXT OF THE ORIGINAL NARRATIVE CONTRACT TO BE INSERTED HERE-->
+    </cel-core:TextVersion>
+    <cel-core:Metadata>
+        <cel-core:SimpleDC>
+            <dc:title>ExampleThree</dc:title>
+            <dc:date>2020-10-22</dc:date>
+            <dc:creator>BBC</dc:creator>
+            <dc:identifier>urn:mpeg:mpeg21:cel:cel-ipre:2012:cel_example_03</dc:identifier>
+        </cel-core:SimpleDC>
+    </cel-core:Metadata>
+    <!-- contract related to a previous one with ipre 2012 maybe not put this in the example-->
+    <cel-core:ContractsRelated>
+        <cel-core:ContractRelation type= "supersedes" contractIdref= "urn:mpeg:mpeg21:cel:cel-ipre:2012:cel_example_03" /> 
+    </cel-core:ContractsRelated>
+    <cel-core:Party id= "licensor">
+        <cel-core:Person>
+            <cel-core:Name>Carles Bertran</cel-core:Name>
+            <dc:identifier>urn:VATIN:xxxxxxxxx</dc:identifier>
+            <cel-core:Details>xxx </cel-core:Details>
+        </cel-core:Person>
+    </cel-core:Party>
+    <cel-core:Party id= "BBC">
+        <cel-core:Organization>
+            <cel-core:Name>British Broadcasting Corporation BBC</cel-core:Name>
+            <!-- identificador a utilitzar en cerca -->
+            <dc:identifier>urn:VATIN:EN33333333333</dc:identifier>
+            <dc:description>The England public broadcasting company</dc:description>
+            <cel-core:Signatory>
+                <cel-core:Name>John Smith</cel-core:Name>
+            </cel-core:Signatory>
+        </cel-core:Organization>
+        <cel-core:Address>Broadcasting House, London, United Kingdom</cel-core:Address>
+    </cel-core:Party>
+    <cel-core:Body>
+        <cel-core:OperativePart>
+            <cel-ipre:Permission id= "P006" isExclusive= "true">
+                <cel-core:Subject partyRef= "BBC" />
+                <cel-core:Act>
+                    <cel-ipre:CommunicationToThePublic />
+                </cel-core:Act>
+                <cel-core:Object>
+                    <cel-core:Item name= "Video sample 03">
+                        <dii:Identifier>isan:cc333cc</dii:Identifier>
+                    </cel-core:Item>
+                </cel-core:Object>
+                <cel-core:Constraint>
+                    <!-- restricts to linear delivery modality, with free-of-charge access policy and a number of runs limited to 10-->
+                    <cel-ipre:AccessPolicy href= "urn:mpeg:mpeg21:cel:ipre:2015 AccessPolicy#FreeOfCharge" />
+                    <cel-ipre:DeliveryModality href= "urn:mpeg:mpeg21:cel:ipre:2015 DeliveryModality#Linear" />
+                    <cel-ipre:Runs numberOfRuns= "10" />
+                    <cel-core:FactIntersection>
+                        <cel-ipre:Language languages= "eng" />
+                        <cel-ipre:SpatialContext>
+                            <cel-ipre:Country>EN</cel-ipre:Country>
+                        </cel-ipre:SpatialContext>
+                        <cel-ipre:TemporalContext beforeDate= "2019-04-15T00:00:00" afterDate= "2022-04-15T23:59:59" />
+                    </cel-core:FactIntersection>
+                </cel-core:Constraint>
+                <cel-core:Issuer partyRef= "licensor" />
+            </cel-ipre:Permission>
+            <!-- permits non linear delivery modality-->
+            <cel-ipre:Permission id= "P007" isExclusive= "true">
+                <cel-core:Subject partyRef= "BBC" />
+                <cel-core:Act>
+                    <cel-ipre:CommunicationToThePublic />
+                </cel-core:Act>
+                <cel-core:Object>
+                    <cel-core:Item name= "Video sample 03">
+                        <dii:Identifier>isan:cc333cc</dii:Identifier>
+                    </cel-core:Item>
+                </cel-core:Object>
+                <cel-core:Constraint>
+                    <cel-ipre:DeliveryModality href= "urn:mpeg:mpeg21:cel:ipre:2015 DeliveryModality#NonLinear" />
+                    <cel-core:FactIntersection>
+                        <cel-ipre:Language languages= "eng" />
+                        <cel-ipre:SpatialContext>
+                            <cel-ipre:Country>EN</cel-ipre:Country>
+                        </cel-ipre:SpatialContext>
+                        <cel-ipre:TemporalContext beforeDate= "2019-04-15T00:00:00" afterDate= "2020-04-15T23:59:59" />
+                    </cel-core:FactIntersection>
+                </cel-core:Constraint>
+                <cel-core:Issuer partyRef= "licensor" />
+            </cel-ipre:Permission>
+            <!-- allows linear delivery modality, together pay access policy, without limitations to the number of runs-->
+            <cel-ipre:Permission id= "P008" isExclusive= "true">
+                <cel-core:Subject partyRef= "TV3" />
+                <cel-core:Act>
+                    <cel-ipre:CommunicationToThePublic />
+                </cel-core:Act>
+                <cel-core:Object>
+                    <cel-core:Item name= "Video sample 03">
+                        <dii:Identifier>isan:cc333cc</dii:Identifier>
+                    </cel-core:Item>
+                </cel-core:Object>
+                <cel-core:Constraint>
+                    <cel-ipre:AccessPolicy href= "urn:mpeg:mpeg21:cel:ipre:2015 AccessPolicy#Pay" />
+                    <cel-ipre:DeliveryModality href= "urn:mpeg:mpeg21:cel:ipre:2015 DeliveryModality#Linear" />
+                    <cel-core:FactIntersection>
+                        <cel-ipre:Language languages= "eng" />
+                        <cel-ipre:SpatialContext>
+                            <cel-ipre:Country>EN</cel-ipre:Country>
+                        </cel-ipre:SpatialContext>
+                        <cel-ipre:TemporalContext beforeDate= "2019-04-15T00:00:00" afterDate= "2022-04-15T23:59:59" />
+                    </cel-core:FactIntersection>
+                </cel-core:Constraint>
+                <cel-core:Issuer partyRef= "licensor" />
+            </cel-ipre:Permission>
+        </cel-core:OperativePart>
+    </cel-core:Body>
+</cel-core:Contract>

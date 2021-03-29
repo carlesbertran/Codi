@@ -8,13 +8,13 @@ const init = async () => {
     try {
         //read and clear txt file section
         const readInterface = readline.createInterface({
-            input: fs.createReadStream('./test/report.txt'),
+            input: fs.createReadStream('./reports/report.txt'),
             output: process.stdout,
             console: false
         });
 
         function deleteFile (){
-            fs.writeFile('./test/report.txt','', (err) => {
+            fs.writeFile('./reports/report.txt','', (err) => {
                 console.log("file deleted");
             });
         

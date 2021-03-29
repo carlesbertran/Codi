@@ -1,0 +1,101 @@
+<cel-core:Contract 
+    xmlns:cel-core= "urn:mpeg:mpeg21:cel:core:2015" 
+    xmlns:cel-ipre= "urn:mpeg:mpeg21:cel:ipre:2015" 
+    xmlns:dc= "http: purl.org dc elements 1.1" 
+    xmlns:xsi= "http: www.w3.org 2001 XMLSchema-instance"
+    xmlns:dii= "urn:mpeg:mpeg21:2002:01-DII-NS"
+    xsi:schemaLocation= "urn:mpeg:mpeg21:cel:core:2015 cel-core.xsd urn:mpeg:mpeg21:cel:ipre:2015 cel-ipre.xsd"
+    contractId= "contract Annex B Example 2">
+    <cel-core:TextVersion>
+        <!-- TEXT OF THE ORIGINAL NARRATIVE CONTRACT TO BE INSERTED HERE-->
+    </cel-core:TextVersion>
+    <cel-core:Metadata>
+        <cel-core:SimpleDC>
+            <dc:title>Example Two</dc:title>
+            <dc:date>2012-02-29</dc:date>
+            <dc:creator>RTVE</dc:creator>
+            <dc:identifier>urn:mpeg:mpeg21:cel:cel-ipre:2012:cel_example_02</dc:identifier>
+        </cel-core:SimpleDC>
+    </cel-core:Metadata>
+    <cel-core:ContractsRelated>
+        <cel-core:ContractRelation type= "supersedes" contractIdref= "urn:mpeg:mpeg21:cel:cel-ipre:2012:cel_example_02" />
+    </cel-core:ContractsRelated>
+    <cel-core:Party id= "licensor">
+        <cel-core:Person>
+            <cel-core:Name>Carles Bertran</cel-core:Name>
+            <dc:identifier>urn:VATIN:xxxxxxxxx</dc:identifier>
+            <cel-core:Details>xxx </cel-core:Details>
+        </cel-core:Person>
+    </cel-core:Party>
+    <cel-core:Party id= "RTVE">
+        <cel-core:Organization>
+            <cel-core:Name>RTVE Radiotelevision Española</cel-core:Name>
+            <dc:identifier>urn:VATIN:ES22222222222</dc:identifier>
+            <dc:description>The Spanish public broadcasting company</dc:description>
+            <cel-core:Details xmlns:vCard= "http: www.w3.org 2001 vcard-rdf 3.0#" xmlns:rdf= "http: www.w3.org 1999 02 22-rdf-syntax-ns#">
+                <vCard:EMAIL rdf:parseType= "Resource">
+                    <rdf:value>thee@nowhere.com </rdf:value>
+                    <rdf:type rdf:resource= "http: www.w3.org 2001 vcard-rdf 3.0#internet" />
+                </vCard:EMAIL>
+            </cel-core:Details>
+            <cel-core:Signatory>
+                <cel-core:Name>Juan Garcia</cel-core:Name>
+            </cel-core:Signatory>
+        </cel-core:Organization>
+        <cel-core:Address>avenida de Radio Television 4, Pozuelo de Alarcon, 28223 Madrid, SPAIN</cel-core:Address>
+    </cel-core:Party>
+    <cel-core:Body>
+        <cel-core:OperativePart>
+            <cel-ipre:Permission id= "p004" isExclusive= "true">
+                <cel-core:Subject partyRef= "RTVE" />
+                <cel-core:Act>
+                    <cel-ipre:CommunicationToThePublic />
+                </cel-core:Act>
+                <cel-core:Object>
+                    <cel-core:Item name= "Video sample 02">
+                        <dii:Identifier>isan:bb222bb</dii:Identifier>
+                    </cel-core:Item>
+                </cel-core:Object>
+                <cel-core:Constraint>
+                    <cel-ipre:Means href= "urn:mpeg:mpeg21:cel:ipre:2015 Means#Satellite" />
+                    <cel-ipre:AccessPolicy href= "urn:mpeg:mpeg21:cel:ipre:2015 AccessPolicy#FreeOfCharge" />
+                    <cel-ipre:DeliveryModality href= "urn:mpeg:mpeg21:cel:ipre:2015 DeliveryModality#Broadcasting" />
+                    <cel-core:FactIntersection>
+                        <cel-ipre:SpatialContext>
+                            <cel-ipre:Country>ES</cel-ipre:Country>
+                        </cel-ipre:SpatialContext>
+                        <cel-ipre:TemporalContext afterDate= "2022-11-19T00:00:00" beforeDate= "2018-11-18T23:59:59" />
+                        <cel-ipre:Language languages= "es" />
+                    </cel-core:FactIntersection>
+                    <cel-ipre:Runs numberOfRuns= "6"/>
+                </cel-core:Constraint>
+                <cel-core:Issuer partyRef= "licensor" />
+            </cel-ipre:Permission>
+            <cel-ipre:Permission id= "p005" isExclusive= "true">
+                <cel-core:Subject partyRef= "RTVE" />
+                <cel-core:Act>
+                    <cel-ipre:MakeAdaptation />
+                </cel-core:Act>
+                <cel-core:Object>
+                    <cel-core:Item name= "Video sample 02">
+                        <dii:Identifier>isan:bb222bb</dii:Identifier>
+                    </cel-core:Item>
+                </cel-core:Object>
+                <cel-core:Constraint>
+                    <cel-ipre:AccessPolicy href= "urn:mpeg:mpeg21:cel:ipre:2015 AccessPolicy#FreeOfCharge" />
+                    <cel-ipre:DeliveryModality href= "urn:mpeg:mpeg21:cel:ipre:2015 DeliveryModality#Broadcasting" />
+                    <cel-core:FactIntersection>
+                        <cel-ipre:SpatialContext>
+                            <cel-ipre:Country>ES</cel-ipre:Country>
+                        </cel-ipre:SpatialContext>
+                        <cel-ipre:TemporalContext afterDate= "2022-11-19T00:00:00" beforeDate= "2019-11-18T23:59:59" />
+                        <cel-ipre:Language languages= "es" />
+                    </cel-core:FactIntersection>
+                    <cel-ipre:Means href= "urn:mpeg:mpeg21:cel:ipre:2015 Means#Internet" />
+                    <cel-ipre:Runs numberOfRuns= "15" />
+                </cel-core:Constraint>
+                <cel-core:Issuer partyRef= "licensor" />
+            </cel-ipre:Permission>
+        </cel-core:OperativePart>
+    </cel-core:Body>
+</cel-core:Contract>
