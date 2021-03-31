@@ -32,7 +32,7 @@
     <cel-core:Party id= "TV3">
         <cel-core:Organization>
             <cel-core:Name>TV3 Televisio de Catalunya</cel-core:Name>
-            <!-- identificador a utilitzar en cerca -->
+            <!-- identifier to use in search -->
             <dc:identifier>urn:VATIN:ES11111111111</dc:identifier>
             <dc:description>The catalonian public broadcasting company</dc:description>
             <cel-core:Signatory>
@@ -106,7 +106,7 @@
                     <cel-ipre:AccessPolicy href= "urn:mpeg:mpeg21:cel:ipre:2015 AccessPolicy#Pay" />
                     <cel-ipre:DeliveryModality href= "urn:mpeg:mpeg21:cel:ipre:2015 DeliveryModality#Linear" />
                     <cel-core:FactIntersection>
-                        <cel-ipre:Language languages= "cat" />
+                        <cel-ipre:Language languages= "esp" />
                         <cel-ipre:SpatialContext>
                             <cel-ipre:Country>ES</cel-ipre:Country>
                         </cel-ipre:SpatialContext>

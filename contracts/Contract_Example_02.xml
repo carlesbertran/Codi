@@ -65,7 +65,7 @@
                             <cel-ipre:Country>ES</cel-ipre:Country>
                         </cel-ipre:SpatialContext>
                         <cel-ipre:TemporalContext afterDate= "2022-11-19T00:00:00" beforeDate= "2018-11-18T23:59:59" />
-                        <cel-ipre:Language languages= "es" />
+                        <cel-ipre:Language languages= "esp" />
                     </cel-core:FactIntersection>
                     <cel-ipre:Runs numberOfRuns= "6"/>
                 </cel-core:Constraint>
@@ -89,7 +89,7 @@
                             <cel-ipre:Country>ES</cel-ipre:Country>
                         </cel-ipre:SpatialContext>
                         <cel-ipre:TemporalContext afterDate= "2022-11-19T00:00:00" beforeDate= "2019-11-18T23:59:59" />
-                        <cel-ipre:Language languages= "es" />
+                        <cel-ipre:Language languages= "esp" />
                     </cel-core:FactIntersection>
                     <cel-ipre:Means href= "urn:mpeg:mpeg21:cel:ipre:2015 Means#Internet" />
                     <cel-ipre:Runs numberOfRuns= "15" />

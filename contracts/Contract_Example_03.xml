@@ -93,7 +93,7 @@
             </cel-ipre:Permission>
             <!-- allows linear delivery modality, together pay access policy, without limitations to the number of runs-->
             <cel-ipre:Permission id= "P008" isExclusive= "true">
-                <cel-core:Subject partyRef= "TV3" />
+                <cel-core:Subject partyRef= "BBC" />
                 <cel-core:Act>
                     <cel-ipre:CommunicationToThePublic />
                 </cel-core:Act>

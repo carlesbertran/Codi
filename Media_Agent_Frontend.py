@@ -25,7 +25,7 @@ videosDict['sample03.mp4']= 'isan:cc333cc'
 DeliveryModes = ['Linear', 'NonLinear', 'Broadcasting']
 Means = ['None', 'Satellite', 'Internet']
 Countries = ['ES', 'EN', 'IT']
-Languages = ['es', 'cat', 'eng']
+Languages = ['esp', 'cat', 'eng']
 
 #ES11111111111
 #ES22222222222

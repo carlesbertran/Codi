@@ -4,6 +4,6 @@ while (1){
         node .\web3check.js
         Start-Sleep -s 5
     } else {
-        Start-Sleep -s 30
+        Start-Sleep -s 20
     }
 }
