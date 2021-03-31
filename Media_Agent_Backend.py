@@ -15,8 +15,8 @@ def checkCredentials (userID, videoToPlay, DeliveryModality, MeanUser, CounUser,
     #check if the userID is present in any contract
     contractsRefered = []
     checkUser = False
-    for contract in os.listdir("./Contracts"):
-        contract = ("./Contracts/"+contract)
+    for contract in os.listdir("./contractsCEL"):
+        contract = ("./contractsCEL/"+contract)
         print (contract)
         partiesInContract = getIdParties(contract)
         
