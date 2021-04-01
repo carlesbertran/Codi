@@ -127,11 +127,6 @@ def checkCredentials (userID, videoToPlay, DeliveryModality, MeanUser, CounUser,
                                 #Update the report.txt
                                 writeReport(userID, videoToPlay, DeliveryModality, CounUser, LangUser, 'REJECTED: Error language declared not allowed')
                                 return ("Error language declared not allowed")
-                            elif not checkMean and checkLanguage and checkCountry and checkDate:
-                                #Broadcasting Mean incorrect
-                                #Update the report.txt
-                                writeReport(userID, videoToPlay, DeliveryModality+'-'+MeanUser, CounUser, LangUser, 'REJECTED: Broadcasting Mean declared not allowed')
-                                return ("Error Broadcasting Mean declared not allowed")
                                                             
                 if not checkObject:
                     #UserID and videoID have no relation in a contract
@@ -142,7 +137,12 @@ def checkCredentials (userID, videoToPlay, DeliveryModality, MeanUser, CounUser,
                     #Delivery Method incorrect
                     #Update the report.txt
                     writeReport(userID, videoToPlay, DeliveryModality, CounUser, LangUser, 'REJECTED: delivery method declared not allowed')
-                    return ("Error delivery method declared not allowed")                 
+                    return ("Error delivery method declared not allowed") 
+                elif not checkMean and checkDeliver and checkObject:
+                    #Broadcasting Mean incorrect
+                    #Update the report.txt
+                    writeReport(userID, videoToPlay, DeliveryModality+'-'+MeanUser, CounUser, LangUser, 'REJECTED: Broadcasting Mean declared not allowed')
+                    return ("Error Broadcasting Mean declared not allowed")                
                    
     if not checkUser:
         #userId not in any contract
