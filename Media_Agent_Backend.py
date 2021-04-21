@@ -8,6 +8,7 @@ import json
 from urllib.request import urlopen
 from MPEG21_Parsing_API import *
 from datetime import date
+from datetime import datetime
 from mediaplayer import *
 
 
@@ -157,7 +158,7 @@ def writeReport(userID, videoToPlay, deliverModality, CounUser, LangUser, reqRes
     f.write(userID+'\n')
     f.write(videoToPlay+'\n')
     f.write(deliverModality+'\n')
-    f.write(date.today().strftime("%Y-%m-%d")+'\n')
+    f.write(date.today().strftime("%Y-%m-%d")+'#'+str(datetime.now().time())+'\n')
     f.write(CounUser+'-'+LangUser+'\n')
     f.write(reqResult)
     f.close()
